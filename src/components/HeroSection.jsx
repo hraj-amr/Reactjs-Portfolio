@@ -43,13 +43,13 @@ export const HeroSection = () => {
 
           {/* Main Headline */}
           <h1 className="animate-fade-up animation-delay-200" style={{ animationFillMode: 'both' }}>
-            <span className="block font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium leading-[0.9] tracking-tight text-foreground">
+            <span className="block font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium leading-none tracking-tight text-foreground">
               Crafting
             </span>
-            <span className="block font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium leading-[0.9] tracking-tight text-foreground mt-1 sm:mt-2">
+            <span className="block font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium leading-none tracking-tight text-foreground mt-1 sm:mt-2">
               Digital
             </span>
-            <span className="block font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium italic leading-[0.9] tracking-tight text-gradient-gold mt-1 sm:mt-2">
+            <span className="block font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium italic leading-[1.2] tracking-tight text-gradient-gold mt-1 sm:mt-2">
               Experiences
             </span>
           </h1>

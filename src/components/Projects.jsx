@@ -36,7 +36,7 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="work" className="py-16 sm:py-24 md:py-32 bg-background relative scroll-mt-18">
+    <section id="work" className="py-16 sm:py-24 md:py-32 bg-background relative scroll-mt-16">
       {/* Section Header */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <AnimatedSection className="mb-12 sm:mb-16 md:mb-20">

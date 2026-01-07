@@ -31,7 +31,7 @@ const skills = [
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-16 sm:py-24 md:py-32 bg-card relative scroll-mt-18">
+    <section id="about" className="py-16 sm:py-24 md:py-32 bg-card relative scroll-mt-16">
       {/* Decorative element */}
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
 

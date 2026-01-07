@@ -40,7 +40,7 @@ const reviews = [
 
 export const ReviewsSection = () => {
   return (
-      <section id="reviews" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-background relative overflow-hidden scroll-mt-20">
+      <section id="reviews" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-background relative overflow-hidden scroll-mt-16">
       {/* Subtle background accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-75 sm:w-150 h-75 sm:h-150 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
