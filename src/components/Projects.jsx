@@ -36,17 +36,17 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="work" className="py-32 bg-background relative">
+    <section id="work" className="py-16 sm:py-24 md:py-32 bg-background relative scroll-mt-18">
       {/* Section Header */}
-      <div className="container mx-auto px-6 lg:px-12">
-        <AnimatedSection className="mb-20">
-          <div className="flex items-center gap-6 mb-6">
-            <span className="w-16 h-px bg-primary" />
-            <span className="text-xs font-sans font-medium tracking-[0.25em] text-primary uppercase">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+        <AnimatedSection className="mb-12 sm:mb-16 md:mb-20">
+          <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+            <span className="w-10 sm:w-16 h-px bg-primary" />
+            <span className="text-[10px] sm:text-xs font-sans font-medium tracking-[0.2em] sm:tracking-[0.25em] text-primary uppercase">
               Selected Work
             </span>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-foreground">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-foreground">
             Projects that
             <span className="italic text-gradient-gold"> define </span>
             excellence
@@ -54,10 +54,10 @@ export const ProjectsSection = () => {
         </AnimatedSection>
 
         {/* Projects Grid */}
-        <div className="space-y-24">
+        <div className="space-y-16 sm:space-y-20 md:space-y-24">
           {projects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 100}>
-              <article className="group grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <article className="group grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
                 {/* Image */}
                 <div
                   className={`relative overflow-hidden rounded-sm ${
@@ -78,29 +78,30 @@ export const ProjectsSection = () => {
                 <div className="absolute inset-0 bg-linear-to-t from-background/60 via-background/30 to-transparent" />
                   
                   {/* Project Number */}
-                <span className="absolute top-6 left-6 font-serif text-7xl font-medium text-foreground/55 mix-blend-screen">
+                {/* <span className="absolute top-4 left-4 sm:top-6 sm:left-6 font-serif text-5xl sm:text-7xl font-medium text-foreground/10"> */}
+                <span className="absolute top-4 left-4 sm:top-6 sm:left-6 font-serif text-5xl sm:text-7xl font-medium text-foreground/55 mix-blend-screen">
                     0{project.id}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className={index % 2 === 1 ? 'lg:order-1 lg:text-right' : ''}>
-                  <div className={`flex items-center gap-4 mb-4 ${index % 2 === 1 ? 'lg:justify-end' : ''}`}>
-                    <span className="text-xs font-sans font-medium tracking-widest text-muted-foreground uppercase">
+                  <div className={`flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 ${index % 2 === 1 ? 'lg:justify-end' : ''}`}>
+                    <span className="text-[10px] sm:text-xs font-sans font-medium tracking-widest text-muted-foreground uppercase">
                       {project.category}
                     </span>
-                    <span className="w-px h-4 bg-border" />
-                    <span className="text-xs font-sans text-muted-foreground">
+                    <span className="w-px h-3 sm:h-4 bg-border" />
+                    <span className="text-[10px] sm:text-xs font-sans text-muted-foreground">
                       {project.year}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-3 sm:mb-4 group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
 
                   <p
-                    className={`font-sans text-muted-foreground font-light leading-relaxed mb-6 max-w-md
+                    className={`font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed mb-4 sm:mb-6 max-w-md
                       ${index % 2 === 1 ? 'lg:ml-auto' : 'lg:mr-auto'}
                     `}
                   >
@@ -108,11 +109,11 @@ export const ProjectsSection = () => {
                   </p>
 
                   {/* Tech Stack */}
-                  <div className={`flex flex-wrap gap-2 mb-8 ${index % 2 === 1 ? 'lg:justify-end' : ''}`}>
+                  <div className={`flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8 ${index % 2 === 1 ? 'lg:justify-end' : ''}`}>
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs font-sans font-medium tracking-wide text-muted-foreground border border-border rounded-sm"
+                        className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-sans font-medium tracking-wide text-muted-foreground border border-border rounded-sm"
                       >
                         {tech}
                       </span>
@@ -124,13 +125,13 @@ export const ProjectsSection = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 font-sans text-sm font-medium tracking-wide uppercase text-foreground hover:text-primary transition-colors duration-300 ${
+                    className={`inline-flex items-center gap-2 font-sans text-xs sm:text-sm font-medium tracking-wide uppercase text-foreground hover:text-primary transition-colors duration-300 ${
                       index % 2 === 1 ? '' : ''
                     }`}
                   >
                     <span>View Project</span>
                     <svg
-                      className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
