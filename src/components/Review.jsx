@@ -12,30 +12,30 @@ const reviews = [
     avatar: Shridhar,
     initials: "SK"
   },
-  {
-    quote: "Rare combination of technical excellence and design sensibility. Delivered beyond expectations, on time.",
-    author: "Marcus Webb",
-    role: "VP Engineering",
-    company: "TechCorp",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    initials: "MW"
-  },
-  {
-    quote: "The attention to detail is unmatched. Every interaction, every animation — meticulously crafted.",
-    author: "Elena Rodriguez",
-    role: "Product Director",
-    company: "DesignLab",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
-    initials: "ER"
-  },
-    {
-    quote: "The attention to detail is unmatched. Every interaction, every animation — meticulously crafted.",
-    author: "Elena Rodriguez",
-    role: "Product Director",
-    company: "DesignLab",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
-    initials: "ER"
-  }
+  // {
+  //   quote: "Rare combination of technical excellence and design sensibility. Delivered beyond expectations, on time.",
+  //   author: "Marcus Webb",
+  //   role: "VP Engineering",
+  //   company: "TechCorp",
+  //   avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+  //   initials: "MW"
+  // },
+  // {
+  //   quote: "The attention to detail is unmatched. Every interaction, every animation — meticulously crafted.",
+  //   author: "Elena Rodriguez",
+  //   role: "Product Director",
+  //   company: "DesignLab",
+  //   avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
+  //   initials: "ER"
+  // },
+  //   {
+  //   quote: "The attention to detail is unmatched. Every interaction, every animation — meticulously crafted.",
+  //   author: "Elena Rodriguez",
+  //   role: "Product Director",
+  //   company: "DesignLab",
+  //   avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
+  //   initials: "ER"
+  // }
 ];
 
 export const ReviewsSection = () => {
