@@ -2,6 +2,7 @@ import { AnimatedSection } from "./Animated";
 import { Quote } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Shridhar from '@/assets/Shridhar.jpg';
+import Aryan from '@/assets/Aryan_Raj.jpg';
 
 const reviews = [
   {
@@ -12,14 +13,14 @@ const reviews = [
     avatar: Shridhar,
     initials: "SK"
   },
-  // {
-  //   quote: "Rare combination of technical excellence and design sensibility. Delivered beyond expectations, on time.",
-  //   author: "Marcus Webb",
-  //   role: "VP Engineering",
-  //   company: "TechCorp",
-  //   avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-  //   initials: "MW"
-  // },
+  {
+    quote: "He has a clear mind, just like his clean UI, and he's as smooth as his UX. The way he helps transform your idea into a polished, high-quality product truly shows his creativity ",
+    author: "Aryan Raj",
+    role: "Product Manager",
+    company: "Klimb.io",
+    avatar: Aryan,
+    initials: "AR"
+  },
   // {
   //   quote: "The attention to detail is unmatched. Every interaction, every animation — meticulously crafted.",
   //   author: "Elena Rodriguez",

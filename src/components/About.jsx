@@ -12,7 +12,7 @@ const experiences = [
     role: 'Frontend Developer Intern',
     company: 'Innocrede Solutions',
     period: '2025',
-    description: 'Leading frontend architecture for payment infrastructure products.',
+    description: 'Built a responsive client onboarding form using React and Tailwind CSS, collaborated with other interns on multiple projects, and worked in a real-world team environment using GitHub for version control.',
   },
   // {
   //   role: 'Software Engineer',
