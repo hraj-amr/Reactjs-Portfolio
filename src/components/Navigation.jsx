@@ -52,7 +52,7 @@ export const Navigation = () => {
           {/* LOGO */}
           <button
             onClick={() => scrollToSection("home")}
-            className="font-serif text-lg sm:text-xl md:text-2xl font-medium tracking-tight text-foreground hover:text-primary transition-colors duration-300 z-50"
+            className="cursor-pointer font-serif text-lg sm:text-xl md:text-2xl font-medium tracking-tight text-foreground hover:text-primary transition-colors duration-300 z-50"
           >
             Harshit Raj
           </button>
@@ -63,7 +63,7 @@ export const Navigation = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.section)}
-                className="hover-underline text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 uppercase"
+                className="cursor-pointer hover-underline text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 uppercase"
               >
                 {item.label}
               </button>
@@ -73,7 +73,7 @@ export const Navigation = () => {
           {/* DESKTOP CTA */}
           <button
             onClick={() => scrollToSection("contact")}
-            className="hidden md:block text-sm font-medium tracking-wide text-primary hover:text-foreground transition-colors duration-300"
+            className="cursor-pointer hidden md:block text-sm font-medium tracking-wide text-primary hover:text-foreground transition-colors duration-300"
           >
             Let's Talk
           </button>

@@ -1,6 +1,8 @@
 import heroPortrait from '@/assets/hero-portrait.jpg';
+import { useState } from 'react';
 
 export const HeroSection = () => {
+  const [bgLoaded, setBgLoaded] = useState(false);
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -14,12 +16,29 @@ export const HeroSection = () => {
 
   return (
     <section id='home' className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
+      <img
+        src={heroPortrait}
+        alt=""
+        className="hidden"
+        onLoad={() => setBgLoaded(true)}
+      />
+      
+      {/* 🔹 Background */}
       <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 sm:opacity-50"
+        {/* Skeleton Loader */}
+        {!bgLoaded && (
+          <div className="absolute inset-0 bg-muted animate-pulse" />
+        )}
+
+        {/* Background Image */}
+        <div
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 sm:opacity-50 transition-opacity duration-700 ${
+            bgLoaded ? "opacity-40 sm:opacity-50" : "opacity-0"
+          }`}
           style={{ backgroundImage: `url(${heroPortrait})` }}
         />
+
+        {/* Overlays */}
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/90 sm:via-background/85 to-background/60 sm:to-background/40" />
         <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background/60" />
       </div>
@@ -63,7 +82,7 @@ export const HeroSection = () => {
           <div className="animate-fade-up animation-delay-600 mt-8 sm:mt-12 flex items-center gap-4 sm:gap-8" style={{ animationFillMode: 'both' }}>
             <button
               onClick={() => scrollToSection("work")}
-              className="group inline-flex items-center gap-2 sm:gap-3 font-sans text-xs sm:text-sm font-medium tracking-wide uppercase text-foreground hover:text-primary transition-colors duration-300"
+              className="cursor-pointer group inline-flex items-center gap-2 sm:gap-3 font-sans text-xs sm:text-sm font-medium tracking-wide uppercase text-foreground hover:text-primary transition-colors duration-300"
             >
               <span>View Work</span>
               <svg
@@ -81,7 +100,7 @@ export const HeroSection = () => {
 
             <button
               onClick={() => scrollToSection("about")}
-              className="font-sans text-xs sm:text-sm font-medium tracking-wide uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="cursor-pointer font-sans text-xs sm:text-sm font-medium tracking-wide uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               About Me
             </button>
