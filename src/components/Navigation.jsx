@@ -8,6 +8,8 @@ const navItems = [
   { label: "Contact", section: "contact" },
 ];
 
+const RESUME_LINK = "https://drive.google.com/drive/folders/1AqRPn_adKvv-A_xmYYr4CzxrjljT2FMj?usp=sharing";
+
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -60,6 +62,7 @@ export const Navigation = () => {
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-8 lg:gap-10">
             {navItems.map((item) => (
+              
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.section)}
@@ -68,7 +71,15 @@ export const Navigation = () => {
                 {item.label}
               </button>
             ))}
+              <button
+              onClick={() => window.open(RESUME_LINK, "_blank")}
+              className="cursor-pointer hover-underline text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 uppercase"
+            >
+              Resume
+            </button>
           </div>
+
+          
 
           {/* DESKTOP CTA */}
           <button
@@ -141,7 +152,26 @@ export const Navigation = () => {
             >
               {item.label}
             </button>
+            
           ))}
+          <button
+            onClick={() => {
+              window.open(RESUME_LINK, "_blank");
+              setIsMobileMenuOpen(false);
+            }}
+            className={`font-serif text-3xl sm:text-4xl font-medium text-foreground hover:text-primary transition-all duration-300 ${
+              isMobileMenuOpen
+                ? "translate-y-0 opacity-100"
+                : "translate-y-4 opacity-0"
+            }`}
+            style={{
+              transitionDelay: isMobileMenuOpen
+                ? `${navItems.length * 75}ms`
+                : "0ms",
+            }}
+          >
+            Resume
+          </button>
 
           {/* MOBILE CTA */}
           <button
