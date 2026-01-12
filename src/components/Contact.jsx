@@ -52,7 +52,7 @@ export const ContactSection = () => {
             <div className="flex items-center justify-center flex-wrap gap-4 sm:gap-8">
               {[
                 { label: 'WhatsApp', href: 'https://wa.me/7250337385' },
-                { label: 'GitHub', href: 'https://github.com/hraj-amr' },
+                { label: 'GitHub', href: 'https://github.com/eternalspce' },
                 { label: 'X', href: 'https://x.com/eternalspce' },
                 { label: 'LinkedIn', href: 'https://linkedin.com/in/harshitraj1510' },
                 
