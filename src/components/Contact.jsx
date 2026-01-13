@@ -1,6 +1,73 @@
 import { AnimatedSection } from "./Animated";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
+import { z } from 'zod';
+import emailjs from "@emailjs/browser";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters")
+});
 
 export const ContactSection = () => {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const validation = contactSchema.safeParse({ name, email, message });
+  if (!validation.success) {
+    toast({
+      title: "Validation Error",
+      description: validation.error.errors[0].message,
+      variant: "destructive",
+    });
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    await emailjs.send(
+      "service_mm6vi78",
+      "template_olwwhri",
+      {
+        name,
+        email,
+        message,
+      },
+      "jdHYkP4MUvrSmcZNC"
+    );
+
+    toast({
+      title: "Message sent!",
+      description: "Thanks for reaching out. I'll reply soon.",
+    });
+
+    setName('');
+    setEmail('');
+    setMessage('');
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
   return (
     <section id="contact" className="py-16 sm:py-24 md:py-32 bg-background relative scroll-mt-16">
       {/* Decorative top border */}
@@ -28,8 +95,66 @@ export const ContactSection = () => {
             </p>
           </AnimatedSection>
 
+          {/* Contact Form */}
+          <AnimatedSection delay={200}>
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 text-left mb-10 sm:mb-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-xs sm:text-sm font-sans font-medium text-foreground mb-2">
+                    Name
+                  </label>
+                  <Input
+                    id="name"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Your name"
+                    className="bg-card border-border focus:border-primary transition-colors"
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-xs sm:text-sm font-sans font-medium text-foreground mb-2">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    className="bg-card border-border focus:border-primary transition-colors"
+                    disabled={isSubmitting}
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-xs sm:text-sm font-sans font-medium text-foreground mb-2">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Tell me about your project..."
+                  rows={5}
+                  className="bg-card border-border focus:border-primary transition-colors resize-none"
+                  disabled={isSubmitting}
+                />
+              </div>
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full sm:w-auto px-8 py-3 bg-primary text-primary-foreground hover:bg-primary/90 font-sans font-medium tracking-wide transition-all duration-300"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </Button>
+            </form>
+          </AnimatedSection>
+
           <AnimatedSection delay={200}>
             {/* Email CTA */}
+            <p className="text-xs sm:text-sm text-muted-foreground mb-3">Or reach out directly:</p>
             <a
               href="mailto:workmail.hraj@gmail.com"
               className="group inline-flex items-center gap-2 sm:gap-4 font-serif text-lg sm:text-2xl md:text-3xl font-medium text-foreground hover:text-primary transition-colors duration-300 break-all sm:break-normal"
