@@ -1,4 +1,4 @@
-import heroPortrait from '@/assets/hero-portrait.jpg';
+import heroPortrait from '@/assets/hero-portrait.webp';
 import { useState } from 'react';
 
 export const HeroSection = () => {
