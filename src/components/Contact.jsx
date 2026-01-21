@@ -179,7 +179,7 @@ export const ContactSection = () => {
                 { label: 'WhatsApp', href: 'https://wa.me/7250337385' },
                 { label: 'GitHub', href: 'https://github.com/eternalspce' },
                 { label: 'X', href: 'https://x.com/eternalspce' },
-                { label: 'LinkedIn', href: 'https://linkedin.com/in/harshitraj1510' },
+                { label: 'LinkedIn', href: 'https://linkedin.com/in/eternalspce' },
                 
               ].map((social) => (
                 <a
